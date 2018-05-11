@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Apicurious</title>
+    <title>Github</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,41 @@
   </head>
 
   <body>
+    <nav>
+      <div class="navmain">
+        <span class="navalign">
+        <span class="search">
+          Search
+        </span>
+        <a href="github.com">Pull Issues</a>
+        <a href="github.com">Market Place</a>
+        <a href="github.com">Explore</a>
+        <span class="navalign">
+      </div>
+      <div class="user">
+        <% if current_user %>
+          <%= current_user.name %>
+          <%= link_to "Logout", logout_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Sign in', github_login_path %>
+        <% end %>
+      </div>
+    </nav>
     <%= yield %>
+    <footer>
+      <hr>
+      <a href="github.com">© 2018 GitHub, Inc.</a>
+      <a href="github.com">Terms</a>
+      <a href="github.com">Privacy</a>
+      <a href="github.com">Security</a>
+      <a href="github.com">Status</a>
+      <a href="github.com">Help</a>
+      <a href="github.com">Contact GitHub</a>
+      <a href="github.com">API</a>
+      <a href="github.com">Training</a>
+      <a href="github.com">Shop</a>
+      <a href="github.com">Blog</a>
+      <a href="github.com">About</a>
+    </footer>
   </body>
 </html>
